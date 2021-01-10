@@ -1,6 +1,40 @@
 * {
     box-sizing: border-box;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+body {
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav--bar {
+    width: 100%;
+    height: 60px;
+    background-color: #424241;
+}
+
+.nav--item {
+    margin: 0 20px 0 0;
+    align-self: center;
+    font-size: 2em;
+    text-decoration: none;
+    color: #e4a451;
+}
 
 .container {
     display: flex;
@@ -33,14 +67,28 @@
     height: 600px;
     min-height: 450px;
     margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 5px 15px, 
+        rgba(0, 0, 0, 0.35) -5px -5px 15px;
     
 }
 
 .card--image {
-    height: 90%;
+    height: 80%;
     width: 100%;
     border-radius: 5px 5px 0 0;
     display: block;
+}
+
+.card--label {
+    display: block;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    background-color: antiquewhite;
+    font-size: 55px;
+    color: orangered;
+
 }
 
 .card--buttons-container {
@@ -60,9 +108,9 @@
 }
 
 .card--input {
-    height: 28px;
-    vertical-align:super;
-    color: #cecbcb;
+    color: #85827e;
+    font-size: 2em;
+
 }
 
 .left--button {
@@ -87,4 +135,12 @@
 
 .add:hover, .remove:hover, .cart:hover {
     transform: scale(1.1);
+}
+
+.add:focus, .remove:focus, .cart:focus, .card--input:focus {
+    outline: none;
+}
+
+.md {
+    width: 33.33%;
 }
