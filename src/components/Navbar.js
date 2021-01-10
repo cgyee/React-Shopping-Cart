@@ -1,11 +1,15 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 const Navbar = () => {
     return (
-        <nav className="nav nav--bar">
-            <a className="nav--item" href="/">Home</a>
-            <a className="nav--item" href="/cart">Cart</a>
-        </nav>
+        <ul  className="nav nav--bar">
+            <Link style={{ textDecoration: 'none' }} to={location=> ({...location, pathname:'/'})}>
+                <li style={{margin:'10px'}} className="nav--item">Home</li>
+            </Link>
+            <Link style={{ textDecoration: 'none' }} to={location=> ({...location, pathname:'/cart'})}>
+                <li style={{margin:'10px'}} className="nav--item">cart</li>        
+            </Link>
+        </ul>
     )
 }
 

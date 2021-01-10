@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -16,6 +17,10 @@ body {
     margin: 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -26,6 +31,7 @@ body {
     width: 100%;
     height: 60px;
     background-color: #424241;
+    margin: 0;
 }
 
 .nav--item {
@@ -133,11 +139,11 @@ body {
     background-color: #74cf4a;
 }
 
-.add:hover, .remove:hover, .cart:hover {
+.card--button:hover {
     transform: scale(1.1);
 }
 
-.add:focus, .remove:focus, .cart:focus, .card--input:focus {
+.card--button:focus {
     outline: none;
 }
 

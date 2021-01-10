@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
+import CardButtons from './CardButtons';
 
 const ProductCard = (props) => {
+    console.log(props)
+    const [quantity, setQuantity] = useState(props.product.quantity)
     
     return (
         <div>
@@ -34,11 +37,25 @@ const ProductCard = (props) => {
                     }
                 }>
                     <span className="card--label">${`${props.product.price}`}</span>
-                    <div className="card--buttons-container">
-                        <button className="card--button remove md"><i className="fas fa-minus"></i></button>
-                        <input className="card--button card--input md" type="number" placeholder="0" />
-                        <button className="card--button add md"><i className="fas fa-plus"></i></button>
-                    </div>
+                    <span className="card--label">Qty:{`${quantity}`}</span>
+                    < CardButtons
+                        product={props.product}
+                        quantity={quantity}
+                        fn={setQuantity}
+                        modi={'md'}
+                    />
+                    <button className="card--button" style= {
+                        {
+                            width: '100%',
+                            height: '10%',
+                            textAlign: 'center',
+                            backgroundColor: '#2384c5',
+                            borderStyle: 'none'
+
+                        }
+                    }>Update
+                    </button>
+
                 </div>
             </div>
         </div>
